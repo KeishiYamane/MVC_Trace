@@ -31,7 +31,7 @@ namespace View
         {
             this._textBoxLog = new System.Windows.Forms.TextBox();
             this._buttonSend = new System.Windows.Forms.Button();
-            this._buttonConnect = new System.Windows.Forms.Button();
+            this.ConnectBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _textBoxLog
@@ -52,25 +52,26 @@ namespace View
             this._buttonSend.Text = "送信";
             this._buttonSend.UseVisualStyleBackColor = true;
             // 
-            // _buttonConnect
+            // ConnectBtn
             // 
-            this._buttonConnect.Location = new System.Drawing.Point(12, 12);
-            this._buttonConnect.Name = "_buttonConnect";
-            this._buttonConnect.Size = new System.Drawing.Size(70, 34);
-            this._buttonConnect.TabIndex = 4;
-            this._buttonConnect.Text = "接続";
-            this._buttonConnect.UseVisualStyleBackColor = true;
+            this.ConnectBtn.Location = new System.Drawing.Point(12, 12);
+            this.ConnectBtn.Name = "ConnectBtn";
+            this.ConnectBtn.Size = new System.Drawing.Size(70, 34);
+            this.ConnectBtn.TabIndex = 4;
+            this.ConnectBtn.Text = "接続";
+            this.ConnectBtn.UseVisualStyleBackColor = true;
+            this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
             // 
-            // Form1
+            // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this._textBoxLog);
             this.Controls.Add(this._buttonSend);
-            this.Controls.Add(this._buttonConnect);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.ConnectBtn);
+            this.Name = "ViewForm";
+            this.Text = "View";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +81,7 @@ namespace View
 
         private System.Windows.Forms.TextBox _textBoxLog;
         private System.Windows.Forms.Button _buttonSend;
-        private System.Windows.Forms.Button _buttonConnect;
+        private System.Windows.Forms.Button ConnectBtn;
     }
 }
 

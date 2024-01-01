@@ -60,7 +60,7 @@ namespace MVC_Trace
             this.Controls.Add(this._textBoxLog);
             this.Controls.Add(this.StartListenBtn);
             this.Name = "ModelForm";
-            this.Text = "Form1";
+            this.Text = "Model";
             this.ResumeLayout(false);
             this.PerformLayout();
 
