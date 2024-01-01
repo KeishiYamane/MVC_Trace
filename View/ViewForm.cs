@@ -36,5 +36,19 @@ namespace View
             // サーバーに接続
             _client = new TcpClient(serverAddr.ToString(),port);
         }
+
+        /// <summary>
+        /// 送信ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SendBtn_Click(object sender, EventArgs e)
+        {
+            var message = "test Message!";
+            Byte[] data = Encoding.UTF8.GetBytes(message);
+            NetworkStream stream = _client.GetStream();
+            stream.Write(data,0,data.Length);
+            _textBoxLog.AppendText($"Sent: {message} \r\n");
+        }
     }
 }

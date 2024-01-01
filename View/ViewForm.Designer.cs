@@ -30,7 +30,7 @@ namespace View
         private void InitializeComponent()
         {
             this._textBoxLog = new System.Windows.Forms.TextBox();
-            this._buttonSend = new System.Windows.Forms.Button();
+            this.SendBtn = new System.Windows.Forms.Button();
             this.ConnectBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,14 +43,15 @@ namespace View
             this._textBoxLog.Size = new System.Drawing.Size(312, 386);
             this._textBoxLog.TabIndex = 5;
             // 
-            // _buttonSend
+            // SendBtn
             // 
-            this._buttonSend.Location = new System.Drawing.Point(88, 12);
-            this._buttonSend.Name = "_buttonSend";
-            this._buttonSend.Size = new System.Drawing.Size(70, 34);
-            this._buttonSend.TabIndex = 3;
-            this._buttonSend.Text = "送信";
-            this._buttonSend.UseVisualStyleBackColor = true;
+            this.SendBtn.Location = new System.Drawing.Point(88, 12);
+            this.SendBtn.Name = "SendBtn";
+            this.SendBtn.Size = new System.Drawing.Size(70, 34);
+            this.SendBtn.TabIndex = 3;
+            this.SendBtn.Text = "送信";
+            this.SendBtn.UseVisualStyleBackColor = true;
+            this.SendBtn.Click += new System.EventHandler(this.SendBtn_Click);
             // 
             // ConnectBtn
             // 
@@ -68,7 +69,7 @@ namespace View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this._textBoxLog);
-            this.Controls.Add(this._buttonSend);
+            this.Controls.Add(this.SendBtn);
             this.Controls.Add(this.ConnectBtn);
             this.Name = "ViewForm";
             this.Text = "View";
@@ -80,7 +81,7 @@ namespace View
         #endregion
 
         private System.Windows.Forms.TextBox _textBoxLog;
-        private System.Windows.Forms.Button _buttonSend;
+        private System.Windows.Forms.Button SendBtn;
         private System.Windows.Forms.Button ConnectBtn;
     }
 }

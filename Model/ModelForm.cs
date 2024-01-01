@@ -65,6 +65,25 @@ namespace MVC_Trace
                             {
                                 _textBoxLog.AppendText("Connected!\r\n");
                             }));
+
+                            String data = null;
+                            Byte[] bytes = new byte[256];
+
+                            NetworkStream stream = client.GetStream();
+
+                            while (true)
+                            {
+                                if (stream.DataAvailable)
+                                {
+                                    int count = stream.Read(bytes,0,bytes.Length); // Read() メソッドは、指定された bytes バッファにデータを読み取ります。このバッファは、'読み取ったデータを ”一時的に保存するための場所”です。Read() メソッドは、”最大で” bytes.Length バイト分のデータを NetworkStream から読み取ります。
+                                    data = Encoding.UTF8.GetString(bytes,0,count);
+
+                                    Invoke((MethodInvoker)(() =>
+                                    {
+                                        _textBoxLog.AppendText($"Received: {data}\r\n");
+                                    }));
+                                }
+                            }
                         }
                     }
                 }
