@@ -35,6 +35,27 @@ namespace View
         {
             // サーバーに接続
             _client = new TcpClient(serverAddr.ToString(),port);
+
+            // ================= (★Model→Viewのデータ受信練習) ============================
+            // 非同期処理開始
+            Task.Run(() =>
+            {
+                byte[] buffer = new Byte[256];
+                string responseData = string.Empty;
+                NetworkStream stream = _client.GetStream();
+
+                while (true)
+                {
+                    int count = stream.Read(buffer, 0, buffer.Length);
+                    responseData = Encoding.UTF8.GetString(buffer, 0, count);
+
+                    Invoke((MethodInvoker)(() =>
+                    {
+                        _textBoxLog.AppendText($"Received: {responseData}\r\n");
+                    }));
+                    _panel1.BackColor = Color.FromArgb(int.Parse(responseData));
+                }
+            });
         }
 
         /// <summary>

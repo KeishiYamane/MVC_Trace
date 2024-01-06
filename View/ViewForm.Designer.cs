@@ -32,6 +32,7 @@ namespace View
             this._textBoxLog = new System.Windows.Forms.TextBox();
             this.SendBtn = new System.Windows.Forms.Button();
             this.ConnectBtn = new System.Windows.Forms.Button();
+            this._panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // _textBoxLog
@@ -63,11 +64,20 @@ namespace View
             this.ConnectBtn.UseVisualStyleBackColor = true;
             this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
             // 
+            // _panel1
+            // 
+            this._panel1.BackColor = System.Drawing.Color.Black;
+            this._panel1.Location = new System.Drawing.Point(341, 12);
+            this._panel1.Name = "_panel1";
+            this._panel1.Size = new System.Drawing.Size(100, 100);
+            this._panel1.TabIndex = 8;
+            // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this._panel1);
             this.Controls.Add(this._textBoxLog);
             this.Controls.Add(this.SendBtn);
             this.Controls.Add(this.ConnectBtn);
@@ -83,6 +93,7 @@ namespace View
         private System.Windows.Forms.TextBox _textBoxLog;
         private System.Windows.Forms.Button SendBtn;
         private System.Windows.Forms.Button ConnectBtn;
+        private System.Windows.Forms.Panel _panel1;
     }
 }
 

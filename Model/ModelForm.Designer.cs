@@ -31,6 +31,9 @@ namespace MVC_Trace
         {
             this._textBoxLog = new System.Windows.Forms.TextBox();
             this.StartListenBtn = new System.Windows.Forms.Button();
+            this._ModelPanel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this._colorDialog = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
             // 
             // _textBoxLog
@@ -52,11 +55,32 @@ namespace MVC_Trace
             this.StartListenBtn.UseVisualStyleBackColor = true;
             this.StartListenBtn.Click += new System.EventHandler(this.StartListenBtn_Click);
             // 
+            // _ModelPanel1
+            // 
+            this._ModelPanel1.BackColor = System.Drawing.Color.Black;
+            this._ModelPanel1.Location = new System.Drawing.Point(358, 54);
+            this._ModelPanel1.Name = "_ModelPanel1";
+            this._ModelPanel1.Size = new System.Drawing.Size(100, 100);
+            this._ModelPanel1.TabIndex = 4;
+            this._ModelPanel1.BackColorChanged += new System.EventHandler(this._ModelPanel1_BackColorChanged);
+            this._ModelPanel1.Click += new System.EventHandler(this._ModelPanel1_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(381, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "↑クリック";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this._ModelPanel1);
             this.Controls.Add(this._textBoxLog);
             this.Controls.Add(this.StartListenBtn);
             this.Name = "ModelForm";
@@ -70,6 +94,9 @@ namespace MVC_Trace
 
         private System.Windows.Forms.TextBox _textBoxLog;
         private System.Windows.Forms.Button StartListenBtn;
+        private System.Windows.Forms.Panel _ModelPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColorDialog _colorDialog;
     }
 }
 
